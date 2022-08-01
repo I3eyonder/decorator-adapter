@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
  * Created by HieuPT on 7/30/2022.
  */
 abstract class FooterDecoratorAdapter(
-    delegateAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>
+    delegateAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>? = null
 ) : DecoratorAdapter<RecyclerView.ViewHolder>(delegateAdapter) {
 
     protected abstract val footerViewType: Int

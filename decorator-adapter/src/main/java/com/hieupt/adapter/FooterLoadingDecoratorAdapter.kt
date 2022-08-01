@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
  * Created by HieuPT on 7/30/2022.
  */
 abstract class FooterLoadingDecoratorAdapter(
-    delegateAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>
+    delegateAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>? = null
 ) : FooterDecoratorAdapter(delegateAdapter) {
 
     var isLoading = false

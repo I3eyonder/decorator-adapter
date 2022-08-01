@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
  * Created by HieuPT on 7/30/2022.
  */
 abstract class HeaderDecoratorAdapter(
-    delegateAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>
+    delegateAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>? = null
 ) : DecoratorAdapter<RecyclerView.ViewHolder>(delegateAdapter) {
 
     protected abstract val headerViewType: Int
@@ -37,6 +37,9 @@ abstract class HeaderDecoratorAdapter(
 
     override fun getDelegateAdapterPosition(basePosition: Int): Int =
         (basePosition - HEADER_COUNT).coerceAtLeast(0)
+
+    override fun getParentAdapterPosition(delegatePosition: Int): Int =
+        delegatePosition + HEADER_COUNT
 
     companion object {
         const val HEADER_POSITION = 0
